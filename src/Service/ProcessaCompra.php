@@ -33,10 +33,10 @@ class ProcessaCompra
             return false; // Não finaliza a compra se o carrinho estiver vazio
         }
 
-        if (count($produtos) > 10 && $carrinho->getValorTotalProdutos() > 50000) {
+        if (count($produtos) > 10 || $carrinho->getValorTotalProdutos() > 50000) {
             return false; // Não finaliza a compra se exceder o limite de produtos ou valor
         }
-
+            
         if(count($produtos) > 0){
             $this->menorValor = $produtos[0]->getValor();
             $this->maiorValor = $produtos[0]->getValor();

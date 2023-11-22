@@ -1,0 +1,98 @@
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU
+Teste Adiciona e Conta Produtos no Carrinho: PASSOU
+Teste Remove Produto do Carrinho: PASSOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Caros: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU
+Teste Obter Três Produtos Mais Baratos: FALHOU

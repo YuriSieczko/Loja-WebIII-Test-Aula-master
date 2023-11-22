@@ -158,23 +158,31 @@ class ProcessaCompraTest extends TestCase
         self::assertEquals($produtoUnico->getValor(), $this->compra->getTotalDaCompra());
     }
 
-    public function testCompraComMaisDeDezItens()
+    public static function carrinhosComMaisDeDezItens()
     {
         $usuario = new Usuario('Teste');
-        $carrinho = new Carrinho($usuario);
+        $carrinhos = [];
 
-        // Adiciona mais de 10 produtos ao carrinho
-        for ($i = 0; $i < 11; $i++) {
-            $carrinho->adicionaProduto(new Produto("Produto $i", 1000));
+        for ($i = 0; $i < 3; $i++) {
+            $carrinho = new Carrinho($usuario);
+            for ($j = 0; $j < 11; $j++) {
+                $carrinho->adicionaProduto(new Produto("Produto $j", 1000));
+            }
+            $carrinhos[] = [$carrinho];
         }
 
-        // Verifica se a finalização da compra retorna falso para mais de 10 itens
-        $resultadoTeste = $this->compra->finalizaCompra($carrinho);
-        $this->logResultadoTeste('Teste Compra Com Mais de Dez Itens: ' . ($resultadoTeste === false ? 'PASSOU' : 'FALHOU'));
+        return $carrinhos;
+    }
 
-        // Adicione uma assertiva para garantir que o teste seja marcado como falha se o resultado for true
+    /**
+     * @dataProvider carrinhosComMaisDeDezItens
+     */
+    public function testCompraComMaisDeDezItens(Carrinho $carrinho)
+    {
+        $resultadoTeste = $this->compra->finalizaCompra($carrinho);
         self::assertFalse($resultadoTeste);
     }
+
 
 
     public function testCompraComValorAcimaDoLimite()
@@ -188,7 +196,7 @@ class ProcessaCompraTest extends TestCase
 
         // Verifica se a finalização da compra retorna falso para valor acima do limite
         $resultadoTeste = $this->compra->finalizaCompra($carrinho);
-        self::assertTrue($resultadoTeste);
+        self::assertFalse($resultadoTeste);
 
         // Salva o resultado do teste no log
         $this->logResultadoTeste('Teste Compra com Valor Acima do Limite: ' . ($resultadoTeste ? 'PASSOU' : 'FALHOU'));
