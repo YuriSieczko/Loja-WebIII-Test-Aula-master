@@ -15,11 +15,6 @@ class CarrinhoTest extends TestCase
         $this->carrinho = new Carrinho($usuario);
     }
 
-    private function logResultadoTeste($mensagem)
-    {
-        file_put_contents('log_carrinho.txt', $mensagem . PHP_EOL, FILE_APPEND);
-    }
-
     public function testAdicionaEContaProdutosNoCarrinho()
     {
         $produto1 = new Produto('Produto 1', 100);
@@ -31,9 +26,6 @@ class CarrinhoTest extends TestCase
         $totalProdutos = $this->carrinho->getTotalDeProdutos();
 
         self::assertEquals(2, $totalProdutos);
-
-        // Salva o resultado do teste no log
-        $this->logResultadoTeste('Teste Adiciona e Conta Produtos no Carrinho: ' . ($totalProdutos === 2 ? 'PASSOU' : 'FALHOU'));
     }
 
     public function testRemoveProdutoDoCarrinho()
@@ -46,9 +38,6 @@ class CarrinhoTest extends TestCase
         $totalProdutos = $this->carrinho->getTotalDeProdutos();
 
         self::assertEquals(0, $totalProdutos);
-
-        // Salva o resultado do teste no log
-        $this->logResultadoTeste('Teste Remove Produto do Carrinho: ' . ($totalProdutos === 0 ? 'PASSOU' : 'FALHOU'));
     }
 
     /**
@@ -60,13 +49,8 @@ class CarrinhoTest extends TestCase
 
         $result = array_map('intval', $result);
         $expected = array_map('intval', $expected);
-    
 
         self::assertEquals($expected, $result);
-
-        // Salva o resultado do teste no log
-        $resultadoTeste = $this->assertEquals($expected, $result) ? 'PASSOU' : 'FALHOU';
-        $this->logResultadoTeste('Teste Obter Três Produtos Mais Caros: ' . $resultadoTeste);
     }
 
     /**
@@ -75,13 +59,12 @@ class CarrinhoTest extends TestCase
     public function testObterTresProdutosMaisBaratos(Carrinho $carrinho, array $expected)
     {
         $result = $carrinho->getMenores();
+
+        $result = array_map('intval', $result);
+        $expected = array_map('intval', $expected);
+
         self::assertEquals($expected, $result);
-
-        // Salva o resultado do teste no log
-        $resultadoTeste = ($result === $expected) ? 'PASSOU' : 'FALHOU';
-        $this->logResultadoTeste('Teste Obter Três Produtos Mais Baratos: ' . $resultadoTeste);
     }
-
     public static function carrinhoDataProvider()
     {
         $usuario = new Usuario('Teste');

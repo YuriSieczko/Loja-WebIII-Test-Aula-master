@@ -7,22 +7,15 @@ Carrinho
  [x] Obter tres produtos mais baratos with data set #1
 
 Processa Compra
- [x] VerificaSe OValorTotalDaCompraEASomaDosProdutosDoCarrinho SaoIguais with data set "carrinho vazio"
- [ ] VerificaSe OValorTotalDaCompraEASomaDosProdutosDoCarrinho SaoIguais with data set "carrinho um item"
- [ ] VerificaSe OValorTotalDaCompraEASomaDosProdutosDoCarrinho SaoIguais with data set "carrinho onze itens"
- [x] VerificaSe AQuantidadeDeProdutosEmCompraECarrinho SaoIguais with data set "carrinho vazio"
- [x] VerificaSe AQuantidadeDeProdutosEmCompraECarrinho SaoIguais with data set "carrinho um item"
- [ ] VerificaSe AQuantidadeDeProdutosEmCompraECarrinho SaoIguais with data set "carrinho onze itens"
- [x] VerificaSe OProdutoDeMaiorValorNoCarrinho EstaCorreto with data set "carrinho vazio"
- [x] VerificaSe OProdutoDeMaiorValorNoCarrinho EstaCorreto with data set "carrinho um item"
- [ ] VerificaSe OProdutoDeMaiorValorNoCarrinho EstaCorreto with data set "carrinho onze itens"
- [x] VerificaSe OProdutoDeMenorValorNoCarrinho EstaCorreto with data set "carrinho vazio"
- [x] VerificaSe OProdutoDeMenorValorNoCarrinho EstaCorreto with data set "carrinho um item"
- [ ] VerificaSe OProdutoDeMenorValorNoCarrinho EstaCorreto with data set "carrinho onze itens"
- [x] Finaliza compra com carrinho vazio
+ [x] VerificaSe OValorTotalDaCompraEASomaDosProdutosDoCarrinho SaoIguais with data set "carrinho onze itens"
+ [x] VerificaSe AQuantidadeDeProdutosEmCompraECarrinho SaoIguais with data set "carrinho onze itens"
+ [x] VerificaSe OProdutoDeMaiorValorNoCarrinho EstaCorreto with data set "carrinho onze itens"
+ [x] VerificaSe OProdutoDeMenorValorNoCarrinho EstaCorreto with data set "carrinho onze itens"
+ [x] Finaliza compra com carrinho vazio with data set "carrinho vazio 1"
+ [x] Finaliza compra com carrinho vazio with data set "carrinho vazio 2"
  [x] Finaliza compra com apenas um produto
  [x] Compra com mais de dez itens with data set #0
  [x] Compra com mais de dez itens with data set #1
  [x] Compra com mais de dez itens with data set #2
- [x] Compra com valor acima do limite
+ [x] Compra com valor acima do limite with data set "carrinho com valor acima do limite"
 

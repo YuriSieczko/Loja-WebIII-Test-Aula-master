@@ -81,7 +81,7 @@ class Carrinho
 
     public function calculaValoresProdutos(): void
     {
-        if ($this->getTotalDeProdutos() > 0) {
+        if ($this->getTotalDeProdutos() > 0 && $this->valorTotalProdutos === 0) {
             $this->maiorValor = $this->produtos[0]->getValor();
             $this->menorValor = $this->produtos[0]->getValor();
             foreach ($this->produtos as $produto) {
@@ -94,25 +94,6 @@ class Carrinho
             }
         }
     }
-
-    // public function ordenaProdutos(): void{
-    //     if(count($this->produtos) >= 3){
-    //         $this->ordenados = [];
-    //         foreach ($this->produtos as $produto){
-    //             $this->ordenados[] = $produto->getValor();
-    //         }
-
-    //         sort($this->ordenados);
-
-    //         $this->maiores[0] = $this->ordenados[count($this->produtos) - 3];
-    //         $this->maiores[1] = $this->ordenados[count($this->produtos) - 2];
-    //         $this->maiores[2] = $this->ordenados[count($this->produtos) - 1];
-
-    //         $this->menores[0] = $this->ordenados[0];
-    //         $this->menores[1] = $this->ordenados[1];
-    //         $this->menores[2] = $this->ordenados[2];
-    //     }
-    // }
 
     public function ordenaProdutos(): void
     {

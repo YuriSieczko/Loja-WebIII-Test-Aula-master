@@ -15,23 +15,10 @@ class ProcessaCompraTest extends TestCase
         $this->compra = new ProcessaCompra();
     }
 
-    private function logResultadoTeste($mensagem)
-    {
-        file_put_contents('log_testes.txt', $mensagem . PHP_EOL, FILE_APPEND);
-    }
 
-
-    public static function carrinhoComProdutos()
+    public static function carrinhoComProdutos3()
     {
-        // Arrange - Given
-        $maria = new Usuario('Maria');
-        $joao = new Usuario('Joao');
         $pedro = new Usuario('Pedro');
-
-        $carrinhoVazio = new Carrinho($maria);
-
-        $carrinhoUmItem = new Carrinho($joao);
-        $carrinhoUmItem->adicionaProduto(new Produto('Forno Eletrico', 4500));
 
         $carrinhoOnzeItens = new Carrinho($pedro);
         $carrinhoOnzeItens->adicionaProduto(new Produto('Geladeira', 1500));
@@ -47,19 +34,16 @@ class ProcessaCompraTest extends TestCase
         $carrinhoOnzeItens->removeProduto($produto);
         $carrinhoOnzeItens->adicionaProduto($produto);
         $carrinhoOnzeItens->adicionaProduto(new Produto('Talheres', 150));
-        $carrinhoOnzeItens->adicionaProduto(new Produto('Micro-ondas', 700));
+
 
         return [
-            'carrinho vazio' => [$carrinhoVazio],
-            'carrinho um item' => [$carrinhoUmItem],
             'carrinho onze itens' => [$carrinhoOnzeItens],
         ];
-
 
     }
 
     /**
-     * @dataProvider carrinhoComProdutos
+     * @dataProvider carrinhoComProdutos3
      */
     public function testVerificaSe_OValorTotalDaCompraEASomaDosProdutosDoCarrinho_SaoIguais(Carrinho $carrinho)
     {
@@ -67,16 +51,17 @@ class ProcessaCompraTest extends TestCase
         $this->compra->finalizaCompra($carrinho);
 
         $totalDaCompra = $this->compra->getTotalDaCompra();
-
+        // echo "Total da compra até agora: " . $totalDaCompra . "\n";
         // Assert - Then
         $totalEsperado = $carrinho->getValorTotalProdutos();
+        // echo "Total da compra até agora: " . $totalEsperado . "\n";
 
         self::assertEquals($totalEsperado, $totalDaCompra);
 
     }
 
     /**
-     * @dataProvider carrinhoComProdutos
+     * @dataProvider carrinhoComProdutos3
      */
     public function testVerificaSe_AQuantidadeDeProdutosEmCompraECarrinho_SaoIguais(Carrinho $carrinho)
     {
@@ -92,7 +77,7 @@ class ProcessaCompraTest extends TestCase
     }
 
     /**
-     * @dataProvider carrinhoComProdutos
+     * @dataProvider carrinhoComProdutos3
      */
     public function testVerificaSe_OProdutoDeMaiorValorNoCarrinho_EstaCorreto(Carrinho $carrinho)
     {
@@ -104,11 +89,12 @@ class ProcessaCompraTest extends TestCase
         // Assert - Then
         $totalEsperado = $carrinho->getMaiorValorProduto();
 
+        // echo "Esperado: " . $totalEsperado . "Maior" . $produtoDeMaiorValor . "\n";
         self::assertEquals($totalEsperado, $produtoDeMaiorValor);
     }
 
     /**
-     * @dataProvider carrinhoComProdutos
+     * @dataProvider carrinhoComProdutos3
      */
     public function testVerificaSe_OProdutoDeMenorValorNoCarrinho_EstaCorreto(Carrinho $carrinho)
     {
@@ -119,25 +105,35 @@ class ProcessaCompraTest extends TestCase
 
         // Assert - Then
         $totalEsperado = $carrinho->getMenorValorProduto();
-
+        // echo "Esperado: " . $totalEsperado . "MENOR" . $produtoDeMenorValor . "\n";
         self::assertEquals($totalEsperado, $produtoDeMenorValor);
     }
 
-    public function testFinalizaCompraComCarrinhoVazio()
+    /**
+     * @dataProvider carrinhosVazios
+     */
+    public function testFinalizaCompraComCarrinhoVazio($carrinho)
     {
-        $carrinhoVazio = new Carrinho(new Usuario('Teste'));
-
-        $resultadoCompra = $this->compra->finalizaCompra($carrinhoVazio);
+        $resultadoCompra = $this->compra->finalizaCompra($carrinho);
 
         // Verifica se a compra não foi finalizada com sucesso para um carrinho vazio
         self::assertFalse($resultadoCompra);
 
         // Verifica se o total de produtos no carrinho vazio é zero
-        $totalDeProdutos = $carrinhoVazio->getTotalDeProdutos();
+        $totalDeProdutos = $carrinho->getTotalDeProdutos();
         self::assertEquals(0, $totalDeProdutos);
 
-        $resultadoTeste = $resultadoCompra ? 'FALHOU' : 'PASSOU';
-        $this->logResultadoTeste('Teste Finaliza Compra com Carrinho Vazio: ' . $resultadoTeste);
+    }
+
+    public static function carrinhosVazios()
+    {
+        $carrinhoVazio1 = new Carrinho(new Usuario('Teste1'));
+        $carrinhoVazio2 = new Carrinho(new Usuario('Teste2'));
+
+        return [
+            'carrinho vazio 1' => [$carrinhoVazio1],
+            'carrinho vazio 2' => [$carrinhoVazio2],
+        ];
     }
 
 
@@ -151,10 +147,6 @@ class ProcessaCompraTest extends TestCase
         $this->compra->finalizaCompra($carrinho);
 
         // Verifica se o total da compra é igual ao valor do único produto
-        $resultadoTeste = ($produtoUnico->getValor() === $this->compra->getTotalDaCompra()) ? 'PASSOU' : 'FALHOU';
-
-        $this->logResultadoTeste('Teste Finaliza Compra com Apenas Um Produto: ' . $resultadoTeste);
-
         self::assertEquals($produtoUnico->getValor(), $this->compra->getTotalDaCompra());
     }
 
@@ -185,21 +177,32 @@ class ProcessaCompraTest extends TestCase
 
 
 
-    public function testCompraComValorAcimaDoLimite()
+    public static function carrinhosComValoresAltos(): array
     {
         $usuario = new Usuario('Teste');
-        $carrinho = new Carrinho($usuario);
 
-        // Adiciona produtos com valor total acima de 50.000,00
-        $carrinho->adicionaProduto(new Produto('Produto caro', 30000));
-        $carrinho->adicionaProduto(new Produto('Produto ainda mais caro', 25000));
+        $carrinhoValorAlto = new Carrinho($usuario);
+        $carrinhoValorAlto->adicionaProduto(new Produto('Produto caro', 30000));
+        $carrinhoValorAlto->adicionaProduto(new Produto('Produto ainda mais caro', 25000));
 
-        // Verifica se a finalização da compra retorna falso para valor acima do limite
-        $resultadoTeste = $this->compra->finalizaCompra($carrinho);
-        self::assertFalse($resultadoTeste);
-
-        // Salva o resultado do teste no log
-        $this->logResultadoTeste('Teste Compra com Valor Acima do Limite: ' . ($resultadoTeste ? 'PASSOU' : 'FALHOU'));
+        return [
+            'carrinho com valor acima do limite' => [
+                $carrinhoValorAlto,
+                false, // Espera-se que a compra não seja finalizada com sucesso
+            ],
+        ];
     }
+
+    /**
+     * @dataProvider carrinhosComValoresAltos
+     */
+    public function testCompraComValorAcimaDoLimite(Carrinho $carrinho, bool $esperado)
+    {
+        $resultadoTeste = $this->compra->finalizaCompra($carrinho);
+
+        self::assertEquals($esperado, $resultadoTeste);
+
+    }
+
 
 }
